@@ -130,21 +130,13 @@
                 makerequest: function() {
                     this.loginstage = 3;
                     axios
-                    //.get('https://api.coindesk.com/v1/bpi/currentprice.json')
                         .get('https://junctionbudapestfunctions3.azurewebsites.net/api/getAudioFromTextDescription?code=VNcJQoBUctRslPphXZZ9QEOoPjMT4bS8DdD2aZH2QEMTRXgi5NCkCQ==')
                         .then(response => {
 
-
-                            this.soundFilePath = result['soundFile'];
-                            this.resulttext = result['textDescription'];
+                            this.soundFilePath = response['soundFile'];
+                            this.resulttext = response['textDescription'];
 
                             this.loginstage = 4;
-
-
-
-
-
-                            // (this.info = response);
                         })
                 }
             }
